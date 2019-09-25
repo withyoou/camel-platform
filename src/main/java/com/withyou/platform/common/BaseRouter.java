@@ -12,6 +12,7 @@ public abstract class BaseRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
+        restConfiguration().host("localhost").port(8080);
         setupRoute();
     }
 
