@@ -32,3 +32,4 @@ build/
 
 /target
 /.idea
+.java-version
