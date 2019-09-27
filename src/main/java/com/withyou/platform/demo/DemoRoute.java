@@ -21,8 +21,11 @@ public class DemoRoute extends BaseRouter {
         //rest api demo
         rest("/test")
                 .get("/a")
-
-                .route().to("bean:testCamel?method=test").endRest();
+                .consumes("application/json").produces("application/json")
+                .route()
+                    .to("bean:testCamel?method=test")
+                    .outputType(TestCamel.class)
+                .endRest();
 
     }
 }

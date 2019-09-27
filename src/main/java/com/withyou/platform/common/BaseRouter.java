@@ -1,6 +1,7 @@
 package com.withyou.platform.common;
 
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.rest.RestBindingMode;
 
 /**
  * @Author zp
@@ -12,7 +13,7 @@ public abstract class BaseRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        restConfiguration().host("localhost").port(8080);
+        restConfiguration().component("servlet").host("localhost").port(8080).bindingMode(RestBindingMode.json);
         setupRoute();
     }
 

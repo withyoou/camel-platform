@@ -9,7 +9,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestCamel {
 
-    public void test() {
+    private Long a;
+
+    public TestCamel() {}
+
+    public TestCamel(Long a) {
+        this.a = a;
+    }
+
+    public TestCamel test() {
         System.out.println("----------------");
+        return new TestCamel(1000L);
+    }
+
+    public Long getA() {
+        return a;
+    }
+
+    public void setA(Long a) {
+        this.a = a;
     }
 }
