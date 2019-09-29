@@ -13,7 +13,7 @@ public abstract class BaseRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        restConfiguration().component("servlet").host("localhost").port(8080).bindingMode(RestBindingMode.json);
+        restConfiguration().bindingMode(RestBindingMode.json);
         setupRoute();
     }
 

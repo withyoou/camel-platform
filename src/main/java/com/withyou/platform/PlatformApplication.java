@@ -15,7 +15,7 @@ public class PlatformApplication {
 
     @Bean
     public ServletRegistrationBean camelServletRegistration() {
-        ServletRegistrationBean registration = new ServletRegistrationBean(new CamelHttpTransportServlet(), "/rest/*");
+        ServletRegistrationBean registration = new ServletRegistrationBean(new CamelHttpTransportServlet(), "/*");
         registration.setName("CamelServlet");
         return registration;
     }
