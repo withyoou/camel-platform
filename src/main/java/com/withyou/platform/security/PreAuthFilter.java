@@ -1,5 +1,6 @@
 package com.withyou.platform.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.preauth.AbstractPreAuthenticatedProcessingFilter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -15,6 +16,11 @@ import java.util.Arrays;
 @Component
 public class PreAuthFilter extends AbstractPreAuthenticatedProcessingFilter {
 
+
+    @Autowired
+    public PreAuthFilter(PreAuthProvider preAuthProvider) {
+        setAuthenticationManager(preAuthProvider);
+    }
 
     @Override
     protected Object getPreAuthenticatedPrincipal(HttpServletRequest httpServletRequest) {

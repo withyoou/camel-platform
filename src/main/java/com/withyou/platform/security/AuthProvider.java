@@ -16,6 +16,7 @@ import java.util.List;
  **/
 @Component
 public class AuthProvider implements AuthenticationProvider {
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken) authentication;

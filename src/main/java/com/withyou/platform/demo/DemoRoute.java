@@ -5,11 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.security.RolesAllowed;
+
 /**
  * @Author admin
  * @Date 2019-09-29 16:01
  **/
 @RestController
+@RolesAllowed({"A"})
 public class DemoRoute {
 
     private Logger log = LoggerFactory.getLogger(DemoRoute.class);
