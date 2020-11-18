@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * @author jeremy.zhao
+ */
 @SpringBootApplication
 public class PlatformApplication {
 

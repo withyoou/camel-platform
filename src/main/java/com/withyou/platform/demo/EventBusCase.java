@@ -17,11 +17,12 @@ public class EventBusCase {
 
         //Subscribe
         busCenter.subscribe(javaRef, TOPIC_1);
-        busCenter.subscribe(pythonRef, TOPIC_1);
+        busCenter.subscribe(pythonRef, TOPIC_2);
 
 
         //Publish
         busCenter.publish(new EventMsg(TOPIC_1, "hello world"));
+        busCenter.publish(new EventMsg(TOPIC_2, "hello world2"));
 
         system.terminate();
     }
@@ -64,6 +65,7 @@ class JavaActor extends UntypedAbstractActor {
 
     @Override
     public void onReceive(Object message) throws Throwable, Throwable {
+//        throw new Exception();
         System.out.println("JavaActor " + message.toString());
     }
 }
