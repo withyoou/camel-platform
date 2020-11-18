@@ -13,9 +13,13 @@ public abstract class BaseRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        restConfiguration().bindingMode(RestBindingMode.json);
+        restConfiguration().bindingMode(RestBindingMode.json)
+        .apiContextPath("/api-doc").apiProperty("cors", "true");
         setupRoute();
     }
 
+    /**
+     * rest route
+     */
     protected abstract void setupRoute();
 }
